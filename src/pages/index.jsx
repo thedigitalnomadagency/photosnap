@@ -1,13 +1,11 @@
-import Head from "next/head";
+//components
+import Layout from "../components/Layout";
 
 const Home = () => {
   return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </div>
+    <Layout>
+      <h1>Home Page</h1>
+    </Layout>
   );
 };
 
