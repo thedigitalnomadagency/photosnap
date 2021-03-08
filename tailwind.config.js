@@ -13,9 +13,13 @@ module.exports = {
       },
       backgroundImage: () => ({
         create: "url('/images/home/desktop/create-and-share.jpg')",
+        "create-md": "url('/images/home/tablet/create-and-share.jpg')",
+        "create-sm": "url('/images/home/mobile/create-and-share.jpg')",
       }),
       spacing: {
-        500: "650px",
+        294: "294px",
+        600: "600px",
+        650: "650px",
       },
     },
   },
