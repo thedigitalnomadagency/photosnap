@@ -1,5 +1,8 @@
 import Head from "next/head";
 
+//components
+import Navbar from "./Navbar";
+
 const Layout = ({ children, title }) => {
   return (
     <>
@@ -7,7 +10,7 @@ const Layout = ({ children, title }) => {
         <title>{title || "Photosnap"}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-
+      <Navbar />
       <main>{children}</main>
     </>
   );
