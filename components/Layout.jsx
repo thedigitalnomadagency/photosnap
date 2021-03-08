@@ -2,6 +2,7 @@ import Head from "next/head";
 
 //components
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Layout = ({ children, title }) => {
   return (
@@ -11,7 +12,8 @@ const Layout = ({ children, title }) => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Navbar />
-      <main>{children}</main>
+      <main className="min-h-screen">{children}</main>
+      <Footer />
     </>
   );
 };

@@ -11,6 +11,12 @@ module.exports = {
         secondary: "#bc7198",
         tertiary: "#5a77ff",
       },
+      backgroundImage: () => ({
+        create: "url('/images/home/desktop/create-and-share.jpg')",
+      }),
+      spacing: {
+        500: "650px",
+      },
     },
   },
   variants: {
