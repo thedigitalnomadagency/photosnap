@@ -24,4 +24,7 @@
 }
 
 @layer components {
+  .heading {
+    @apply text-3xl font-medium tracking-widest uppercase md:text-4xl;
+  }
 }
