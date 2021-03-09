@@ -163,7 +163,7 @@ const Info = ({ title, name }) => {
       </div>
 
       <div className="flex items-center justify-between pt-5">
-        <Link href="/stories">
+        <Link href="/stories" className="uppercase">
           <a> Read Story</a>
         </Link>
 
