@@ -33,6 +33,6 @@
   }
 
   .stories {
-    @apply relative flex items-end w-full h-full p-5 transition-all duration-300 transform bg-cover md:p-10 group hover:-translate-y-5;
+    @apply relative flex items-end w-full h-full p-5 transition-all duration-300 transform bg-cover md:p-10 group xl:hover:-translate-y-5;
   }
 }
