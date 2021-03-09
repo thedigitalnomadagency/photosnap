@@ -163,8 +163,8 @@ const Info = ({ title, name }) => {
       </div>
 
       <div className="flex items-center justify-between pt-5">
-        <Link href="/stories" className="uppercase">
-          <a> Read Story</a>
+        <Link href="/stories">
+          <a className="tracking-widest uppercase"> Read Story</a>
         </Link>
 
         <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
