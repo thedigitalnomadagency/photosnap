@@ -109,7 +109,71 @@ const Home = () => {
           <div className="bg-cover h-294 md:h-600 lg:col-span-7 md:col-span-2 bg-designed-sm lg:bg-designed md:bg-designed-md" />
         </Fade>
       </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4">
+        <Fade left>
+          <div className="stories-wrapper">
+            <div className="stories bg-mountains-sm md:bg-mountains">
+              <Info title="The Mountain" name="John Appleseed" />
+              <Gradient />
+            </div>
+          </div>
+        </Fade>
+        <Fade>
+          <div className="stories-wrapper">
+            <div className="stories md:bg-cityscapes bg-cityscapes-sm">
+              <Info title="Sunset Cityscapes" name="Benjamin Cruz" />
+              <Gradient />
+            </div>
+          </div>
+        </Fade>
+        <Fade left>
+          <div className="stories-wrapper">
+            <div className="stories md:bg-voyage bg-voyage-sm">
+              <Info title="18 Days Voyage" name="Alexei Borodin" />
+              <Gradient />
+            </div>
+          </div>
+        </Fade>
+        <Fade>
+          <div className="stories-wrapper">
+            <div className="stories md:bg-architecturals bg-architecturals-sm">
+              <Info title="Architecturals" name="Samantha Brooke" />
+              <Gradient />
+            </div>
+          </div>
+        </Fade>
+      </div>
     </Layout>
+  );
+};
+
+const Gradient = () => {
+  return (
+    <div className="absolute bottom-0 left-0 hidden w-full h-2 group-hover:block bg-gradient-to-r from-tertiary via-secondary to-primary" />
+  );
+};
+
+const Info = ({ title, name }) => {
+  return (
+    <div className="w-full space-y-5 text-white divide-y">
+      <div>
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p>by {name}</p>
+      </div>
+
+      <div className="flex items-center justify-between pt-5">
+        <Link href="/stories">
+          <a> Read Story</a>
+        </Link>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
+          <g fill="none" fillRule="evenodd" stroke="#fff">
+            <path d="M0 7h41.864M35.428 1l6 6-6 6" />
+          </g>
+        </svg>
+      </div>
+    </div>
   );
 };
 
