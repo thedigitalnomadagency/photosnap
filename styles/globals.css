@@ -29,7 +29,7 @@
   }
 
   .stories-wrapper {
-    @apply cursor-pointer h-270 md:h-500;
+    @apply h-270 md:h-500;
   }
 
   .stories {
