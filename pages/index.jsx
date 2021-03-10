@@ -9,7 +9,8 @@ const Home = () => {
   return (
     <Layout>
       <div className="grid lg:grid-cols-12 md:grid-rows-1 md:grid-cols-6">
-        <div className="flex items-center justify-center row-start-2 bg-black lg:col-span-5 md:col-span-4 md:row-start-1">
+        <div className="relative flex items-center justify-center row-start-2 bg-black lg:col-span-5 md:col-span-4 md:row-start-1">
+          <div className="absolute md:left-0 top-0 md:top-52 left-10 w-40 md:w-1.5 h-1.5 md:bg-gradient-to-b bg-gradient-to-r from-tertiary via-secondary to-primary md:h-72" />
           <Zoom>
             <div className="py-10 space-y-10 text-white md:py-0 w-80 md:w-96">
               <h1 className="heading">create and share your photo stories.</h1>
@@ -65,11 +66,7 @@ const Home = () => {
                   </a>
                 </Link>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
-                  <g fill="none" fillRule="evenodd" stroke="#000">
-                    <path d="M0 7h41.864M35.428 1l6 6-6 6" />
-                  </g>
-                </svg>
+                <img src="/arrow.svg" alt="" />
               </div>
             </div>
           </Zoom>
@@ -95,11 +92,7 @@ const Home = () => {
                   </a>
                 </Link>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
-                  <g fill="none" fillRule="evenodd" stroke="#000">
-                    <path d="M0 7h41.864M35.428 1l6 6-6 6" />
-                  </g>
-                </svg>
+                <img src="/arrow.svg" alt="" />
               </div>
             </div>
           </Zoom>
@@ -144,6 +137,53 @@ const Home = () => {
           </div>
         </Fade>
       </div>
+
+      <Zoom>
+        <div className="grid py-10 lg:grid-cols-3">
+          <Feature>
+            <div className="">
+              <img src="/responsive.svg" alt="" />
+            </div>
+
+            <h1 className="text-xl font-bold text-center">100% Responsive</h1>
+
+            <p className="text-center">
+              No matter which the device you’re on, our site is fully responsive
+              and stories look beautiful on any screen.
+            </p>
+          </Feature>
+
+          <Feature>
+            <div className="p-5">
+              <img src="/no-limit.svg" alt="" />
+            </div>
+
+            <h1 className="text-xl font-bold text-center">
+              No Photo Upload Limit
+            </h1>
+
+            <p className="text-center">
+              Our tool has no limits on uploads or bandwidth. Freely upload in
+              bulk and share all of your stories in one go.
+            </p>
+          </Feature>
+
+          <Feature>
+            <div className="">
+              <img src="/embed.svg" alt="" />
+            </div>
+
+            <h1 className="text-xl font-bold text-center">
+              Available to Embed
+            </h1>
+
+            <p className="text-center">
+              Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube
+              videos, Google Maps, and more.
+            </p>
+          </Feature>
+        </div>
+      </Zoom>
     </Layout>
   );
 };
@@ -173,6 +213,14 @@ const Info = ({ title, name }) => {
           </g>
         </svg>
       </div>
+    </div>
+  );
+};
+
+const Feature = ({ children }) => {
+  return (
+    <div className="flex flex-col items-center justify-center p-16 space-y-5">
+      {children}
     </div>
   );
 };
