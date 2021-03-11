@@ -6,6 +6,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Info from "../components/Info";
 import Gradient from "../components/Gradient";
+import StoryCard from "../components/StoryCard";
 
 //utils
 import { stories } from "../utils/stories";
@@ -65,7 +66,7 @@ const Home = () => {
               </p>
 
               <div className="flex items-center space-x-5 cursor-pointer">
-                <Link href="/">
+                <Link href="/stories">
                   <a className="tracking-widest uppercase hover:underline">
                     View the stories
                   </a>
@@ -91,7 +92,7 @@ const Home = () => {
               </p>
 
               <div className="flex items-center space-x-5 cursor-pointer">
-                <Link href="/">
+                <Link href="/stories">
                   <a className="tracking-widest uppercase hover:underline">
                     View the stories
                   </a>
@@ -113,14 +114,10 @@ const Home = () => {
           .filter((_, idx) => idx < 4)
           .map((story, idx) => {
             return (
-              <Fade left>
-                <div key={idx} className="stories-wrapper">
-                  <div className={`stories ${story.images}`}>
-                    <Info title={story.title} name={story.name} />
-                    <Gradient />
-                  </div>
-                </div>
-              </Fade>
+              <StoryCard key={idx} images={story.images} left>
+                <Info title={story.title} name={story.name} />
+                <Gradient />
+              </StoryCard>
             );
           })}
       </div>
