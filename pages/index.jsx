@@ -4,6 +4,11 @@ import Link from "next/link";
 
 //components
 import Layout from "../components/Layout";
+import Info from "../components/Info";
+import Gradient from "../components/Gradient";
+
+//utils
+import { stories } from "../utils/stories";
 
 const Home = () => {
   return (
@@ -104,38 +109,20 @@ const Home = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
-        <Fade left>
-          <div className="stories-wrapper">
-            <div className="stories bg-mountains-sm md:bg-mountains">
-              <Info title="The Mountain" name="John Appleseed" />
-              <Gradient />
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div className="stories-wrapper">
-            <div className="stories md:bg-cityscapes bg-cityscapes-sm">
-              <Info title="Sunset Cityscapes" name="Benjamin Cruz" />
-              <Gradient />
-            </div>
-          </div>
-        </Fade>
-        <Fade left>
-          <div className="stories-wrapper">
-            <div className="stories md:bg-voyage bg-voyage-sm">
-              <Info title="18 Days Voyage" name="Alexei Borodin" />
-              <Gradient />
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div className="stories-wrapper">
-            <div className="stories md:bg-architecturals bg-architecturals-sm">
-              <Info title="Architecturals" name="Samantha Brooke" />
-              <Gradient />
-            </div>
-          </div>
-        </Fade>
+        {stories
+          .filter((_, idx) => idx < 4)
+          .map((story, idx) => {
+            return (
+              <Fade left>
+                <div key={idx} className="stories-wrapper">
+                  <div className={`stories ${story.images}`}>
+                    <Info title={story.title} name={story.name} />
+                    <Gradient />
+                  </div>
+                </div>
+              </Fade>
+            );
+          })}
       </div>
 
       <Zoom>
@@ -185,35 +172,6 @@ const Home = () => {
         </div>
       </Zoom>
     </Layout>
-  );
-};
-
-const Gradient = () => {
-  return (
-    <div className="absolute bottom-0 left-0 hidden w-full h-2 group-hover:block bg-gradient-to-r from-tertiary via-secondary to-primary" />
-  );
-};
-
-const Info = ({ title, name }) => {
-  return (
-    <div className="w-full space-y-5 text-white divide-y">
-      <div>
-        <h1 className="text-2xl font-bold">{title}</h1>
-        <p>by {name}</p>
-      </div>
-
-      <div className="flex items-center justify-between pt-5">
-        <Link href="/stories">
-          <a className="tracking-widest uppercase"> Read Story</a>
-        </Link>
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
-          <g fill="none" fillRule="evenodd" stroke="#fff">
-            <path d="M0 7h41.864M35.428 1l6 6-6 6" />
-          </g>
-        </svg>
-      </div>
-    </div>
   );
 };
 
