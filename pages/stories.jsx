@@ -9,9 +9,6 @@ import StoryCard from "../components/StoryCard";
 import Info from "../components/Info";
 import Gradient from "../components/Gradient";
 
-//utils
-import { stories } from "../utils/stories";
-
 const Stories = () => {
   return (
     <Layout>
@@ -96,14 +93,189 @@ const Stories = () => {
       </Fade>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
-        {stories.map((story, idx) => {
-          return (
-            <StoryCard key={idx} images={story.images}>
-              <Info title={story.title} name={story.name} date={story.date} />
+        <>
+          <StoryCard left>
+            <div className="stories md:bg-mountains bg-mountains-sm">
+              <Info
+                title="The Mountains"
+                name="John Appleseed"
+                date="April 16th 2020"
+              />
               <Gradient />
-            </StoryCard>
-          );
-        })}
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-cityscapes bg-cityscapes-sm">
+              <Info
+                title="Sunset Cityscapes"
+                name="Benjamin Cruz"
+                date="April 14th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard left>
+            <div className="stories md:bg-voyage bg-voyage-sm">
+              <Info
+                title="18 Days Voyage"
+                name="Alexei Borodin"
+                date="April 11th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-architecturals bg-architecturals-sm">
+              <Info
+                title="Architecturals"
+                name="Samantha Brooke"
+                date="April 9th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+        </>
+
+        <>
+          <StoryCard left>
+            <div className="stories md:bg-tour bg-tour-sm">
+              <Info
+                title="World Tour 2019"
+                name="Timothy Wagner"
+                date="April 7th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-corners bg-corners-sm">
+              <Info
+                title="Unforeseen Corners"
+                name="William Malcolm"
+                date="April 3rd 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard left>
+            <div className="stories md:bg-king bg-king-sm">
+              <Info
+                title="King on Africa: Part II"
+                name="Tim Hillenburg"
+                date="March 29th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-trip bg-trip-sm">
+              <Info
+                title="The Trip to Nowhere"
+                name="Felicia Rourke"
+                date="March 21st 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+        </>
+
+        <>
+          <StoryCard left>
+            <div className="stories md:bg-rage bg-rage-sm">
+              <Info
+                title="Rage of The Sea"
+                name="Mohammed Abdul"
+                date="March 19th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-running bg-running-sm">
+              <Info
+                title="Running Free"
+                name="Michelle"
+                date="March 16th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard left>
+            <div className="stories md:bg-waves bg-waves-sm">
+              <Info
+                title="Behind the Waves"
+                name="Lamarr Wilson"
+                date="March 11th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-calm bg-calm-sm">
+              <Info
+                title="Calm Waters"
+                name="Samantha Brooke"
+                date="March 9th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+        </>
+
+        <>
+          <StoryCard left>
+            <div className="stories md:bg-milky bg-milky-sm">
+              <Info
+                title="The Milky Way"
+                name="John Appleseed"
+                date="Benjamin Cruz"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-forest bg-forest-sm">
+              <Info
+                title="Night at The Dark Forest"
+                name="Mohammed Abdul"
+                date="March 4th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard left>
+            <div className="stories md:bg-somwarpet bg-somwarpet-sm">
+              <Info
+                title="Somwarpet’s Beauty"
+                name="Michelle"
+                date="March 1st 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+
+          <StoryCard>
+            <div className="stories md:bg-dreams bg-dreams-sm">
+              <Info
+                title="Land of Dreams"
+                name="William Malcolm"
+                date="February 25th 2020"
+              />
+              <Gradient />
+            </div>
+          </StoryCard>
+        </>
       </div>
     </Layout>
   );

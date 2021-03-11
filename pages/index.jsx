@@ -8,9 +8,6 @@ import Info from "../components/Info";
 import Gradient from "../components/Gradient";
 import StoryCard from "../components/StoryCard";
 
-//utils
-import { stories } from "../utils/stories";
-
 const Home = () => {
   return (
     <Layout>
@@ -110,16 +107,33 @@ const Home = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
-        {stories
-          .filter((_, idx) => idx < 4)
-          .map((story, idx) => {
-            return (
-              <StoryCard key={idx} images={story.images} left>
-                <Info title={story.title} name={story.name} />
-                <Gradient />
-              </StoryCard>
-            );
-          })}
+        <StoryCard left>
+          <div className="stories md:bg-mountains bg-mountains-sm">
+            <Info title="The Mountains" name="John Appleseed" />
+            <Gradient />
+          </div>
+        </StoryCard>
+
+        <StoryCard>
+          <div className="stories md:bg-cityscapes bg-cityscapes-sm">
+            <Info title="Sunset Cityscapes" name="Benjamin Cruz" />
+            <Gradient />
+          </div>
+        </StoryCard>
+
+        <StoryCard left>
+          <div className="stories md:bg-voyage bg-voyage-sm">
+            <Info title="18 Days Voyage" name="Alexei Borodin" />
+            <Gradient />
+          </div>
+        </StoryCard>
+
+        <StoryCard>
+          <div className="stories md:bg-architecturals bg-architecturals-sm">
+            <Info title="Architecturals" name="Samantha Brooke" />
+            <Gradient />
+          </div>
+        </StoryCard>
       </div>
 
       <Zoom>
