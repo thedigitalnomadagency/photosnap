@@ -7,6 +7,7 @@ const Footer = () => {
   const [twitter, setTwitter] = React.useState(false);
   const [pinterest, setPinterest] = React.useState(false);
   const [instagram, setInstagram] = React.useState(false);
+
   const links = [
     { link: "/", title: "home" },
     { link: "/stories", title: "stories" },
@@ -124,7 +125,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="lg:w-1/2 md:hidden lg:block">
+      <div className="md:hidden lg:block">
         <ul className="space-y-5">
           {links.map((link, idx) => {
             return (
@@ -140,7 +141,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="space-y-20 md:space-y-28 lg:space-y-20">
+      <div className="w-full space-y-20 md:space-y-28 lg:space-y-20">
         <div className="flex items-center justify-center space-x-5 text-center md:justify-end">
           <Link href="/">
             <a className="tracking-widest text-white uppercase hover:underline">

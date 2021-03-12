@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Info from "../components/Info";
 import Gradient from "../components/Gradient";
 import StoryCard from "../components/StoryCard";
+import Feature from "../components/Feature";
 
 const Home = () => {
   return (
@@ -183,14 +184,6 @@ const Home = () => {
         </div>
       </Zoom>
     </Layout>
-  );
-};
-
-const Feature = ({ children }) => {
-  return (
-    <div className="flex flex-col items-center justify-center p-16 space-y-5">
-      {children}
-    </div>
   );
 };
 
