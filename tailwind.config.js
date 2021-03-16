@@ -67,6 +67,8 @@ module.exports = {
         "beta-sm": "url('/images/shared/mobile/bg-beta.jpg')",
       }),
       spacing: {
+        34: "34px",
+        60: "60px",
         270: "270px",
         280: "280px",
         288: "288px",
@@ -83,6 +85,7 @@ module.exports = {
   variants: {
     extend: {
       display: ["group-hover"],
+      backgroundColor: ["checked"],
     },
   },
   plugins: [],

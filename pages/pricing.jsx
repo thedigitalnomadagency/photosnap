@@ -4,8 +4,51 @@ import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
 
 import Layout from "../components/Layout";
+import Switch from "../components/Switch";
+import PriceCard from "../components/PriceCard";
 
 const Pricing = () => {
+  const prices = [
+    {
+      plan: "Basic",
+      info:
+        "Includes basic usage of our platform. Recommended for new and aspiring photographers.",
+      monthly: "$19.00",
+      yearly: "$190.00",
+    },
+    {
+      plan: "Pro",
+      info:
+        "More advanced features available. Recommended for photography veterans and professionals.",
+      monthly: "$39.00",
+      yearly: "$390.00",
+      active: true,
+    },
+
+    {
+      plan: "Business",
+      info:
+        "Additional features available such as more detailed metrics. Recommended for business owners.",
+      monthly: "$99.00",
+      yearly: "$990.00",
+    },
+  ];
+  const [billing, setBilling] = React.useState(false);
+  const [monthly, setMonthly] = React.useState(false);
+  const [yearly, setYearly] = React.useState(false);
+
+  const switchBilling = (e) => {
+    setBilling(e.target.checked);
+
+    if (e.target.checked === true) {
+      setYearly(true);
+      setMonthly(false);
+    } else {
+      setYearly(false);
+      setMonthly(true);
+    }
+  };
+
   return (
     <Layout>
       <div className="grid lg:grid-cols-12 md:grid-rows-1 md:grid-cols-6">
@@ -29,7 +72,35 @@ const Pricing = () => {
         </Fade>
       </div>
 
-      <div className="h-screen"></div>
+      <Zoom>
+        <div className="my-20 md:my-32">
+          <div className="flex justify-center">
+            <div className="flex items-center space-x-6">
+              <p
+                className={`${
+                  monthly ? "text-black" : "text-gray-400"
+                } text-xl tracking-wider`}
+              >
+                Monthly
+              </p>
+              <Switch onChange={switchBilling} />
+              <p
+                className={`${
+                  yearly ? "text-black" : "text-gray-400"
+                } text-xl tracking-widest`}
+              >
+                Yearly
+              </p>
+            </div>
+          </div>
+
+          <div className="grid p-10 space-y-10 md:py-20 md:px-20 xl:px-40 lg:grid-cols-3 lg:space-y-0 lg:gap-7">
+            {prices.map((price, idx) => {
+              return <PriceCard key={idx} info={price} billing={billing} />;
+            })}
+          </div>
+        </div>
+      </Zoom>
 
       <div className="grid px-10 text-white bg-cover md:px-20 md:grid-cols-2 bg-beta-sm md:bg-beta-md lg:bg-beta h-288 md:280">
         <Zoom>
